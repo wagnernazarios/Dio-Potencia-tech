@@ -16,6 +16,7 @@ function classificarImc(imc) {
   }
 }
 
+//main
 // function autoinvocável
 // não precisa ser chamada e nem de nome
 // mas também não pode ser reutilizada uma vez que não tem nome

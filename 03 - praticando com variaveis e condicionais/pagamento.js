@@ -10,13 +10,13 @@ Código Condição de pagamento:
 
 const precoNormal = 50;
 const metodoDePegamento = "a vista";
-const condicaoDePegamento = 3;
+const condicaoDePegamento = 1;
 
 if (metodoDePegamento == "debito" && condicaoDePegamento < 2) {
-  const valorPago = precoNormal * 0.1;
+  const valorPago = precoNormal - 10;
   console.log("valor pago com desconto será de: R$" + valorPago.toFixed(2));
 } else if (metodoDePegamento == "a vista") {
-  const valorPago = precoNormal * 0.15;
+  const valorPago = precoNormal - 15;
   console.log("valor pago com desconto de será de: R$" + valorPago.toFixed(2));
 } else if (metodoDePegamento == "debito" && condicaoDePegamento == 2) {
   const valorPago = precoNormal;
