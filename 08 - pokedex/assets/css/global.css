@@ -1,3 +1,57 @@
+@import url(./pokedex.css);
+
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  background-color: #f6f6fc;
+}
+
+.content {
+  padding: 1rem;
+  text-align: center;
+  margin: 0.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    text-align: center;
+    max-width: 768px;
+    margin: 2rem auto;
+    border-radius: 10px;
+  }
+
+  .pokemon {
+    width: 25%;
+    height: 30%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+  .pokemon {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+  .pokemon {
+    width: 60%;
+  }
 }
