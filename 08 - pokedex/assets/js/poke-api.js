@@ -1,9 +1,15 @@
 const pokeApi = {};
 
-pokeApi.getPokemon = (offset = 0, limit = 10) => {
+pokeApi.getPokemonDetail = (pokemon) => {
+  return fetch(pokemon.url).then((response) => response.json());
+};
+
+pokeApi.getPokemon = (offset = 0, limit = 20) => {
   const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
   return fetch(url)
     .then((response) => response.json())
     .then((jsonBody) => jsonBody.results)
-    .catch((error) => console.error(error));
+    .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
+    .then((detailRequests) => Promise.all(detailRequests))
+    .then((pokemonDetails) => pokemonDetails);
 };
